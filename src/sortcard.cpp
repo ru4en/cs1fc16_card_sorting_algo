@@ -7,39 +7,43 @@
 #include <iostream>
 using namespace std;
 
-const int maxCard = 7;
+const int maxCard = 20;
 
 aCard thePack[maxCard];
 
 aCard* bubbleSort(aCard c[])
 {
     aCard x;
-    bool sorted=false;
-    while (sorted!=true) {
+
+    for (int j = 0; j < maxCard; j++)
+    {
         for (int i = 0; i < maxCard; i++)
         {
-            if (c[i].cardSuit > c[i + 1].cardSuit)
+            if (c[i].cardVal < c[i + 1].cardVal)
             {
                 x = c[i + 1];
                 c[i + 1] = c[i];
                 c[i] = x;
-                
-            }else
-            {
-                sorted=true;
             }
-        } 
-    }
+        }
+    }    
     return c;
+}
+
+aCard* quickSort(aCard c[], start = , end = )
+{
+    aCard x;
+    if()
+
 }
 
 void printPack(aCard c[])
 {
-    string suteNames[] = {"Hearts", "Clubs", "Diamonds", "Spades"};
+    string suteNames[] = {"♥️ Hearts", "♣️ Clubs", "♦️ Diamonds", "♠️ Spades"};
+    string cardValue[] = {"NULL", "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
     for (int i=0; i < maxCard; i++)
     {
-        cout << c[i].cardVal << " of ";
-        cout << suteNames[c[i].cardSuit] << endl;
+        cout << cardValue[c[i].cardVal] << " of " << suteNames[c[i].cardSuit] << endl;
     }
 }
 
