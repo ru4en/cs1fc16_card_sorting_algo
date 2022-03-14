@@ -30,11 +30,14 @@ aCard* bubbleSort(aCard c[])
     return c;
 }
 
-aCard* quickSort(aCard c[], start = , end = )
+aCard* quickSort(aCard c[], int start = 0, int end = maxCard)
 {
     aCard x;
-    if()
 
+    if (start >= end)
+    {
+        
+    }
 }
 
 void printPack(aCard c[])
