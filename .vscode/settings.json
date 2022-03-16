@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "random": "cpp",
+        "algorithm": "cpp"
+    },
+    "cSpell.words": [
+        "numbofmovs"
+    ]
+}
