@@ -1,7 +1,10 @@
 {
     "files.associations": {
         "random": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "*.tcc": "cpp",
+        "atomic": "cpp",
+        "ostream": "cpp"
     },
     "cSpell.words": [
         "numbofmovs"
