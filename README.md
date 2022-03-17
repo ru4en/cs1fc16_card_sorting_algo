@@ -50,7 +50,7 @@ The objective of this coursework was to understand sorting algorithms and binary
 
 For the quick sort algorithm
 
-``` C++
+``` c++
 aCard* bubbleSort(aCard c[], bool val)               // bubbleSort algorithm which returns a pointer to a card, and takes in a list of cards and boolean values if to sort by  card value or card sute
 {       
     aCard x;                                         // Temporary variable x to hold cards during sorting
@@ -105,7 +105,7 @@ int corOrder(aCard a, aCard b, int val)             // checker function that ret
 
 #### Quick Sort and the partitioning Function
 
-```C++
+``` c++
 aCard* quickSort(aCard c[], int left, int right, bool val) // quickSort function will return aCard and takes in aCard left right and val arguments. This function will be called recursively.
 {
     if (left >= right) return c;                     // if left is less than ore equal to right return
@@ -137,7 +137,7 @@ int partition(aCard c[], int left, int right, int val) // function used to deter
 
 #### Card Print Function
 
-```C++
+``` c++
 void printPack(aCard c[], string msg)               // Neatly print the cards using the name of the values and the suite with a emoji (nerdfonts or emoji(UNICODE) required for this to work properly)
 {
     string suiteNames[] = {"♥️ Hearts", "♣️ Clubs", "♦️ Diamonds", "♠️ Spades"}; // list of suite names that will be called when suite need to be displayed
@@ -156,7 +156,7 @@ void printPack(aCard c[], string msg)               // Neatly print the cards us
 
 #### Tesing the Sorting Algorithms
 
-```C++
+``` c++
 
 string testSortingAlgos(aCard a[], aCard b[]){      // test sorting algorithms by comparing bubbleSort and quickSort
     for (int i = 0; i < maxCard; i++)
@@ -173,7 +173,7 @@ string testSortingAlgos(aCard a[], aCard b[]){      // test sorting algorithms b
 
 #### Main Function for the Sorting Algorithms
 
-```C++
+``` c++
 
 int main()
 {
@@ -207,7 +207,7 @@ int main()
 
 ## Tree Program
 
-```C++
+``` c++
 
 
 #include <string>
