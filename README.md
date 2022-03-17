@@ -46,14 +46,15 @@ The objective of this coursework was to understand sorting algorithms and binary
 
 ## Sorting Program
 
-### Quick Sort
+As Stated in the introduction two sorting algorithms will be used and tested to demonstrate the performance of the different sorting algorithms and its time complexity. A simple counter that measures the number of times each algorithm checks and moves cards has also been implemented.
 
-For the quick sort algorithm
+### Bubble Sort
+
+The Algorithm used to sort the stack of cards is by looping an if statement in `maxCard-1`  iteration of I and j using it calls the swap function and swaps the current item in the stack and the next item if its larger. Finally returning the stack.
 
 ``` c++
 aCard* bubbleSort(aCard c[], bool val)               // bubbleSort algorithm which returns a pointer to a card, and takes in a list of cards and boolean values if to sort by  card value or card sute
 {       
-    aCard x;                                         // Temporary variable x to hold cards during sorting
 
     for (int j = 0; j < (maxCard-1); j++)            // for i in maxCard-1 and for j in maxCard-1 loops trough the pack, hence the big O sorting in exponential time.
     {
@@ -69,8 +70,11 @@ aCard* bubbleSort(aCard c[], bool val)               // bubbleSort algorithm whi
     return c;                                        // return a pointer of the array of sorted cards
 }
 ```
-
+Bubble Sort Output
+![](img/out2.png)
 #### The Swap function
+
+This function is used by both sorting algorithms and essentially initiates an `aCard` struct `x` to temporarily store the card that’s being worked on and then set the first position in the card to `x`. then setting the value of the card in the second position to the value of the card in the first position. Finally, setting the value of `x` to the value of the card in the second position.
 
 ``` c++
 void swap(aCard c[], int pos1, int pos2){          // swap function to swap 2 cards in a pack
@@ -82,6 +86,8 @@ void swap(aCard c[], int pos1, int pos2){          // swap function to swap 2 ca
 ```
 
 #### The Compare function
+
+The Compare Function takes in three arguments, two `aCards`, and a Boolean value to ether compare by `cardVal` or `cardSuit`. If value is 0(False) it sorts by `cardSuit` if its 1(True) it sorts by `cardVal` it returns true if a is bigger, then `B` and returns False if `B` is bigger than `A`.
 
 ```c++
 int corOrder(aCard a, aCard b, int val)             // checker function that returns true if a is smaller than b. val is used to determine if cardVal or cardSuit is being checked
@@ -104,6 +110,8 @@ int corOrder(aCard a, aCard b, int val)             // checker function that ret
 ```
 
 #### Quick Sort and the partitioning Function
+
+As the time complexity of bubble sort is `Θ(N^2)` it’s not expected to be the optimum way of sorting list Quick sort is often used. The Quicksort algorithm consists of two functions the quicksort function which is called recursively until the last two items are sorted and a partition function which finds the pivot and devise the list. Here the swap function is also used to swap the card in the current iteration with the left integer.
 
 ``` c++
 aCard* quickSort(aCard c[], int left, int right, bool val) // quickSort function will return aCard and takes in aCard left right and val arguments. This function will be called recursively.
@@ -134,8 +142,11 @@ int partition(aCard c[], int left, int right, int val) // function used to deter
     return left;                                     // return the left integer for recursion purposes
 }
 ```
-
+Quick sort Output
+![Quick SORT Output](img/out4.png)
 #### Card Print Function
+
+This simple function prints out each card int the array using the value name (e.g.: 12 as queen) as well as the suit names instead of 0,1,2 or 3. Output Example.: King of ♠️ Spades
 
 ``` c++
 void printPack(aCard c[], string msg)               // Neatly print the cards using the name of the values and the suite with a emoji (nerdfonts or emoji(UNICODE) required for this to work properly)
@@ -153,7 +164,8 @@ void printPack(aCard c[], string msg)               // Neatly print the cards us
     cout << "------------------------------------------\n" << corOrderCounter << " number of checks. \n" << sortCounter << " moves for " << maxCard << " cards." << "\n------------------------------------------\n" << endl;
 }
 ```
-
+Print Output
+![Print Output](img/out1.png)
 #### Tesing the Sorting Algorithms
 
 ``` c++
@@ -204,12 +216,13 @@ int main()
     cout << "Test that Bubble sort is the same order as Quick sort: " << testSortingAlgos(bubbleSortedCards, quickSortedCards) << endl; // run the test
 }
 ```
-
+Quick Sort Output
+![](img/out4.png)
 ## Tree Program
 
+The tree program could be broken down into … components, the struct which used `aCard` as the data and two pointer nodes one the less side and the other on the more side. The `insertTree` creates a node and allow to append a card to the tree. `cfstring` function is used to compares two cards and returns -1,0,1. `cardNewNode` create a new node and returns a pointer. The `printTree` function prints out all the items in the tree.
+
 ``` c++
-
-
 #include <string>
 #include <iostream>
 using namespace std;
@@ -229,7 +242,7 @@ cardTreeNode* cardNewNode(cardTreeNode* l, aCard a) {       // create a new node
 }
 
 int cfstring(aCard c1, aCard c2) {
-    // compares two strings : returns -1,0,1
+    // compares two cards and  returns -1,0,1
     if (c1.cardVal <= c2.cardVal) return -1;
     else if (c1.cardVal >= c2.cardVal) return 1;
     else return 0;
@@ -271,4 +284,8 @@ int main(){
 
 ```
 
+Tree Output
+![Output](img/out3.png)
 ## Reflection
+
+In Conclusion we learned two different methods of storing items in a list. Although The Bubble sort algorithm is not efficient it gives a good incite on how things could be sorted and was easy to program. The Quick sort programs widened upon that knowledge to optimize sorting for further applications. The tree algorithm helped understand how algorithms are used in real like software systems such as databases and spreadsheets.
